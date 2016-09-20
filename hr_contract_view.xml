@@ -106,6 +106,7 @@
                         <page string="Information" name="information">
                             <group>
                                 <group name="salary_and_advantages" string="Salary and Advantages">
+                                    <field name="workday_deal"/>
                                     <field name="wage"/>
                                     <field name="advantages" nolabel="1" placeholder="Advantages..." colspan="2"/>
                                 </group>
@@ -124,12 +125,15 @@
                             <separator string="Notes"/>
                             <field name="notes"/>
                         </page>
-                        <page string="Work Permit">
+                        <!-- <page string="Work Permit">
                             <group col="4">
                                 <field name="visa_no"/>
                                 <field name="permit_no"/>
                                 <field name="visa_expire"/>
                             </group>
+                        </page> -->
+                        <page string="PhuCap_BaoHiem">
+                       		<field name='phucap_baohiem_ids'/>
                         </page>
                     </notebook>
                     </sheet>
@@ -154,6 +158,7 @@
                     <field name="date_start"/>
                     <field name="date_end"/>
                     <field name="wage" invisible="1"/>
+                    <field name="workday_deal" invisible="1"/>
                     <field name="message_needaction" invisible="1"/>
                 </tree>
             </field>
@@ -213,5 +218,34 @@
         <menuitem action="action_hr_contract_type" id="hr_menu_contract_type" parent="hr.menu_human_resources_configuration" sequence="3" groups="base.group_no_one"/>
         <menuitem action="action_hr_contract" id="hr_menu_contract" parent="hr.menu_hr_root" name="Contracts" sequence="4" groups="base.group_hr_manager"/>
 
+		<!-- Create view for Phu cap va Bao hiem -->
+		<record id="hr_contract_phucapbaohiem_tree" model="ir.ui.view">
+			<field name="name">hr.contract.phucapbaohiem.tree</field>
+			<field name="model">hr.phucapbaohiem</field>
+			<field name="arch" type="xml">
+				<tree string="Phu Cap - Bao Hiem">
+					<field name="code"/>
+					<field name="name"/>
+					<field name="amount"/>
+				</tree>
+			</field>
+		</record>
+		
+		<record id="hr_contract_phucapbaohiem_form" model="ir.ui.view">
+			<field name="name">hr.contract.phucapbaohiem.form</field>
+			<field name="model">hr.phucapbaohiem</field>
+			<field name="arch" type="xml">
+				<form string="Phu Cap - Bao Hiem">
+					<sheet>
+						<group col="4">
+							<field name="code"/>
+							<field name="name"/>
+							<field name="amount"/>
+						</group>
+					</sheet>
+				</form>
+			</field>
+		</record>
+		
     </data>
 </openerp>

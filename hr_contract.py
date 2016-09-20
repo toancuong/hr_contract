@@ -73,6 +73,7 @@ class hr_contract(osv.osv):
         'trial_date_end': fields.date('Trial End Date'),
         'working_hours': fields.many2one('resource.calendar', 'Working Schedule'),
         'wage': fields.float('Wage', digits=(16, 2), required=True, help="Basic Salary of the employee"),
+        'workday_deal': fields.float('Work Day Deal', digits=(16,2), required=True),
         'advantages': fields.text('Advantages'),
         'notes': fields.text('Notes'),
         'permit_no': fields.char('Work Permit No', required=False, readonly=False),
@@ -82,6 +83,7 @@ class hr_contract(osv.osv):
             [('draft', 'New'), ('open', 'Running'), ('pending', 'To Renew'), ('close', 'Expired')],
             string='Status', track_visibility='onchange',
             help='Status of the contract'),
+        'phucap_baohiem_ids': fields.many2many('hr.phucapbaohiem', string='Phu Cap va Bao Hiem'),
     }
 
     def _get_type(self, cr, uid, context=None):
