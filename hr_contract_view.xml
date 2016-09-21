@@ -31,13 +31,13 @@
                     <xpath expr="//field[@name='coach_id']" position="after">
                         <field name="manager" groups="base.group_no_one"/>
                     </xpath>
-                    <xpath expr="//group[@name='active_group']" position="after">
+                    <!-- <xpath expr="//group[@name='active_group']" position="after">
                         <group string="Current Contract">
                             <field name="medic_exam" string="Medical Exam"/>
                             <field name="vehicle"/>
                             <field name="vehicle_distance"/>
                         </group>
-                    </xpath>
+                    </xpath> -->
                     <field name="marital" position="after">
                         <field name="children"/>
                     </field>
