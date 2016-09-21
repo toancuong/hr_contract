@@ -106,8 +106,8 @@
                         <page string="Information" name="information">
                             <group>
                                 <group name="salary_and_advantages" string="Salary and Advantages">
-                                    <field name="workday_deal"/>
                                     <field name="wage"/>
+                                    <field name="workday_deal"/>
                                     <field name="advantages" nolabel="1" placeholder="Advantages..." colspan="2"/>
                                 </group>
                                 <group name="duration_group" string="Duration">
